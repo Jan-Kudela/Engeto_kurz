@@ -52,6 +52,7 @@ if username in users:
 else:
     print("You are not registered.")
 
+
 print("We have 3 texts to be analyzed.")
 print("-" * 30)
 text_numbers = ["1", "2", "3"]
@@ -62,10 +63,18 @@ if choosen_number not in text_numbers:
 choosen_number = int(choosen_number)
 
 choosen_text = TEXTS[choosen_number - 1]
-split_text = choosen_text.split(" ")
-choosen_text_clear = []
-for words in choosen_text:
-    if words != " ":
-        choosen_text_clear.append(words)
+#split_text = choosen_text.split(" ")
+#choosen_text_clear = []
+#for words in range(0,len(split_text)-1):
+    #if split_text[words] != '':
+        #choosen_text_clear.append(split_text[words])
 
-print(choosen_text_clear)
+#print(choosen_text_clear)
+# choosen_text_clear
+one_line = choosen_text.replace("\n","" )
+one_line = one_line.replace("    "," ")
+one_line_clear = one_line.replace(".","")
+one_line_clear = one_line_clear.replace(",","")
+choosen_text_list = one_line_clear.split(" ")
+print(choosen_text_list)
+print(len(choosen_text_list))
