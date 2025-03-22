@@ -75,7 +75,29 @@ one_line = choosen_text.replace("\n","" )
 one_line = one_line.replace("    "," ")
 one_line_clear = one_line.replace(".","")
 one_line_clear = one_line_clear.replace(",","")
+one_line_clear = one_line_clear.replace("-"," ") #kvůli slova buff-to-white v 2.textu
 choosen_text_list = one_line_clear.split(" ")
-#print(choosen_text_list)
+print(choosen_text_list)
 #print(len(choosen_text_list))
 print(f"There are {len(choosen_text_list)} words in the selected text.")
+
+first_upper = [] #list s prvním velkým písmenem
+for upper in choosen_text_list:
+    if upper[0].isupper():
+        first_upper.append(upper)
+#print(first_upper)
+
+all_upper = [] #list se všemi velkými
+for all in first_upper:
+    if all[-1].isupper():
+        all_upper.append(all)
+#print(all_upper)
+
+numbers = []
+for num in choosen_text_list:
+    if num.isdigit():
+        numbers.append(num)
+
+#print(numbers)
+smaller = len(choosen_text_list) - len(first_upper) - len(all_upper) - len(numbers)
+#print(smaller)
