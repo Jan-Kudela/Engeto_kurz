@@ -172,8 +172,21 @@ if username in users:
 
     print("-" * 40)
     #&print(f"1| {star1 * '*'}     |{star1}")
-
-    print(f"1| {len(lenght_1) * '*'}     |{len(lenght_1)}")
-
+ 
+    print(f" 1| {len(lenght_1) * '*'} {(16 - len(lenght_1)) * " "}|{len(lenght_1)}")
+    print(f" 2| {len(lenght_2) * '*'} {(16 - len(lenght_2)) * " "}|{len(lenght_2)}")
+    print(f" 3| {len(lenght_3) * '*'} {(16 - len(lenght_3)) * " "}|{len(lenght_3)}")
+    print(f" 4| {len(lenght_4) * '*'} {(16 - len(lenght_4)) * " "}|{len(lenght_4)}")
+    print(f" 5| {len(lenght_5) * '*'} {(16 - len(lenght_5)) * " "}|{len(lenght_5)}")
+    print(f" 6| {len(lenght_6) * '*'} {(16 - len(lenght_6)) * " "}|{len(lenght_6)}")
+    print(f" 7| {len(lenght_7) * '*'} {(16 - len(lenght_7)) * " "}|{len(lenght_7)}")
+    print(f" 8| {len(lenght_8) * '*'} {(16 - len(lenght_8)) * " "}|{len(lenght_8)}")
+    print(f" 9| {len(lenght_9) * '*'} {(16 - len(lenght_9)) * " "}|{len(lenght_9)}")
+    if len(lenght_10) != 0:
+        print(f"10| {len(lenght_10) * '*'} {(16 - len(lenght_10)) * " "}|{len(lenght_10)}")
+    if len(lenght_11) != 0:
+        print(f"11| {len(lenght_11) * '*'} {(16 - len(lenght_11)) * " "}|{len(lenght_11)}")
+    if len(lenght_12) != 0:
+        print(f"12| {len(lenght_12) * '*'} {(16 - len(lenght_12)) * " "}|{len(lenght_12)}")
 else:
     print("You are not registered.")
