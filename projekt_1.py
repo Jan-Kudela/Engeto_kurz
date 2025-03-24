@@ -38,6 +38,7 @@ username = input("username: ")
 
 if username in users:
     user_password = input("password: ")
+    print("-" * 40)
     if username == "bob" and user_password == "123":
         print(f"Welcome to the app, {username}")
     elif username == "ann" and user_password == "pass123":
@@ -49,55 +50,130 @@ if username in users:
     else:
         print("Wrong password.")
 
+    print("We have 3 texts to be analyzed.")
+    print("-" * 40)
+    text_numbers = ["1", "2", "3"]
+    choosen_number = (input("Enter a number btw. 1 and 3 to select: "))
+    print("-" * 40)
+    if choosen_number not in text_numbers:
+        print("You are out of range or you didn´t write a number.")
+
+    choosen_number = int(choosen_number)
+
+    choosen_text = TEXTS[choosen_number - 1]
+
+    one_line = choosen_text.replace("\n","" )
+    one_line = one_line.replace("    "," ")
+    one_line_clear = one_line.replace(".","")
+    one_line_clear = one_line_clear.replace(",","")
+    one_line_clear = one_line_clear.replace("-"," ") #kvůli slova buff-to-white v 2.textu
+    choosen_text_list = one_line_clear.split(" ")
+    #print(choosen_text_list)
+    #print(len(choosen_text_list))
+    print(f"There are {len(choosen_text_list)} words in the selected text.")
+
+    first_upper = [] #list s prvním velkým písmenem
+    for upper in choosen_text_list:
+        if upper[0].isupper():
+            first_upper.append(upper)
+    #print(first_upper)
+    print(f"There are {len(first_upper)} titlecase words.")
+
+    all_upper = [] #list se všemi velkými
+    for all in first_upper:
+        if all[-1].isupper():
+            all_upper.append(all)
+    #print(all_upper)
+    print(f"There are {len(all_upper)} uppercase words.")
+
+    numbers = []
+    for num in choosen_text_list:
+        if num.isdigit():
+            numbers.append(num)
+
+    #print(numbers)
+    smaller = len(choosen_text_list) - len(first_upper) - len(all_upper) - len(numbers)
+    #print(smaller)
+    print(f"There are {smaller} lowercase words.")
+    print(f"There are {len(numbers)} numeric strings.")
+
+    numbers_int = []
+    for nr in range(0,len(numbers)):
+        numbers_int.append(int(numbers[nr]))
+
+    #print(numbers_int)
+
+    suma = sum(numbers_int)
+    print(f"The sum of all the numbers is {suma}.")
+    print("-" * 40)
+    print("LEN| OCCURENCES |NR.")
+
+    #graf četnosti délky písmen
+
+    lenght_1 = []
+    for x1 in choosen_text_list:
+        if len(x1) == 1:
+            lenght_1.append(x1)
+
+    lenght_2 = []
+    for x2 in choosen_text_list:
+        if len(x2) == 2:
+            lenght_2.append(x2)
+    
+    lenght_3 = []
+    for x3 in choosen_text_list:
+        if len(x3) == 3:
+            lenght_3.append(x3)
+    
+    lenght_4 = []
+    for x4 in choosen_text_list:
+        if len(x4) == 4:
+            lenght_4.append(x4)
+    
+    lenght_5 = []
+    for x5 in choosen_text_list:
+        if len(x5) == 5:
+            lenght_5.append(x5)
+     
+    lenght_6 = []
+    for x6 in choosen_text_list:
+        if len(x6) == 6:
+            lenght_6.append(x6)
+
+    lenght_7 = []
+    for x7 in choosen_text_list:
+        if len(x7) == 7:
+            lenght_7.append(x7)
+
+    lenght_8 = []
+    for x8 in choosen_text_list:
+        if len(x8) == 8:
+            lenght_8.append(x8)
+
+    lenght_9 = []
+    for x9 in choosen_text_list:
+        if len(x9) == 9:
+            lenght_9.append(x9)
+  
+    lenght_10 = []
+    for x10 in choosen_text_list:
+        if len(x10) == 10:
+            lenght_10.append(x10)
+        
+    lenght_11 = []
+    for x11 in choosen_text_list:
+        if len(x11) == 11:
+            lenght_11.append(x11)
+       
+    lenght_12 = []
+    for x12 in choosen_text_list:
+        if len(x12) == 12:
+            lenght_12.append(x12)
+
+    print("-" * 40)
+    #&print(f"1| {star1 * '*'}     |{star1}")
+
+    print(f"1| {len(lenght_1) * '*'}     |{len(lenght_1)}")
+
 else:
     print("You are not registered.")
-
-
-print("We have 3 texts to be analyzed.")
-print("-" * 30)
-text_numbers = ["1", "2", "3"]
-choosen_number = (input("Enter a number btw. 1 and 3 to select: "))
-if choosen_number not in text_numbers:
-    print("You are out of range or you didn´t write a number.")
-
-choosen_number = int(choosen_number)
-
-choosen_text = TEXTS[choosen_number - 1]
-#split_text = choosen_text.split(" ")
-#choosen_text_clear = []
-#for words in range(0,len(split_text)-1):
-    #if split_text[words] != '':
-        #choosen_text_clear.append(split_text[words])
-
-#print(choosen_text_clear)
-# choosen_text_clear
-one_line = choosen_text.replace("\n","" )
-one_line = one_line.replace("    "," ")
-one_line_clear = one_line.replace(".","")
-one_line_clear = one_line_clear.replace(",","")
-one_line_clear = one_line_clear.replace("-"," ") #kvůli slova buff-to-white v 2.textu
-choosen_text_list = one_line_clear.split(" ")
-print(choosen_text_list)
-#print(len(choosen_text_list))
-print(f"There are {len(choosen_text_list)} words in the selected text.")
-
-first_upper = [] #list s prvním velkým písmenem
-for upper in choosen_text_list:
-    if upper[0].isupper():
-        first_upper.append(upper)
-#print(first_upper)
-
-all_upper = [] #list se všemi velkými
-for all in first_upper:
-    if all[-1].isupper():
-        all_upper.append(all)
-#print(all_upper)
-
-numbers = []
-for num in choosen_text_list:
-    if num.isdigit():
-        numbers.append(num)
-
-#print(numbers)
-smaller = len(choosen_text_list) - len(first_upper) - len(all_upper) - len(numbers)
-#print(smaller)
